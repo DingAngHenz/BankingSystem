@@ -1,0 +1,19 @@
+package bankingsystem;
+
+/**
+ *
+ * @author user
+ */
+public class SavingAccount extends BankAccount {
+    private double interestRate;
+
+    public SavingAccount(String accountNumber, double accountBalance, String accountHolderName, double interestRate) {
+        super(accountNumber, accountBalance, accountHolderName);
+        this.interestRate = interestRate;
+    }
+
+    public void calculateAndAddInterest() {
+        double interest = getAccountBalance() * interestRate;
+        deposit(interest);
+    }
+}
